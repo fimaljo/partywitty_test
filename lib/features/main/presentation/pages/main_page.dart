@@ -25,7 +25,20 @@ class MainPage extends StatelessWidget {
         }
       },
       child: Scaffold(
-        body: child,
+        body: Container(
+          width: double.infinity,
+          height: double.infinity,
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.bottomLeft,
+              end: Alignment.bottomRight,
+              colors: [
+                Color(0xFF7B5CF0).withValues(alpha: 0.1),
+                Colors.yellow.withValues(alpha: 0.1),
+              ],
+            ),
+          ),
+        ),
         bottomNavigationBar:
             BlocSelector<NavigationBloc, NavigationState, NavigationTab>(
               selector: (state) => state.currentTab,
