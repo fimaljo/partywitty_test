@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:partywitty_test/features/home/presentation/widgets/custom_app_bar.dart';
 import 'package:partywitty_test/features/home/presentation/widgets/event_card.dart';
 import 'package:partywitty_test/features/navigation/presentation/bloc/navigation_bloc.dart';
 import 'package:partywitty_test/features/navigation/presentation/bloc/navigation_state.dart';
@@ -14,7 +13,7 @@ class HomePage extends StatelessWidget {
       listener: (context, state) {},
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        appBar: const CustomAppBar(),
+
         body: SafeArea(
           child: ListView.builder(
             padding: EdgeInsets.only(bottom: 50),

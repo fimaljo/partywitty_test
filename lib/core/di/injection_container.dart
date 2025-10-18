@@ -6,7 +6,7 @@ import 'package:partywitty_test/core/di/navigation_di.dart';
 final GetIt sl = GetIt.instance;
 
 Future<void> setupServiceLocator(GoRouter router) async {
-  sl..registerLazySingleton<GoRouter>(() => router);
+  sl.registerLazySingleton<GoRouter>(() => router);
 
   setupNavigationDependencies();
 

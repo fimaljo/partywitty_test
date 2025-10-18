@@ -1,4 +1,3 @@
-// lib/core/navigation/app_router.dart
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:partywitty_test/features/home/presentation/pages/home_page.dart';
@@ -7,13 +6,21 @@ import '../../features/main/presentation/pages/main_page.dart';
 
 import 'route_constants.dart';
 
+String lastValidPath = RouteConstants.home;
+
 class AppRouter {
   static GoRouter createRouter() {
     return GoRouter(
       initialLocation: RouteConstants.home,
       redirect: (context, state) {
+        if (state.uri.path == RouteConstants.moreItems) {
+          return lastValidPath;
+        }
+
+        lastValidPath = state.uri.path;
         return null;
       },
+
       routes: <RouteBase>[
         ShellRoute(
           navigatorKey: GlobalKey<NavigatorState>(),
@@ -35,11 +42,6 @@ class AppRouter {
               path: RouteConstants.booking,
               name: RouteConstants.bookingName,
               builder: (context, state) => Center(child: Text("Booking")),
-            ),
-            GoRoute(
-              path: RouteConstants.moreItems,
-              name: RouteConstants.moreItemsName,
-              builder: (context, state) => Center(child: Text("More Items")),
             ),
           ],
         ),

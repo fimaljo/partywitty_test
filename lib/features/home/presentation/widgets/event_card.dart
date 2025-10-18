@@ -25,7 +25,7 @@ class EventCard extends StatelessWidget {
     required this.detailInfo,
     this.bannerColor = Colors.deepPurpleAccent,
     this.offerColor = Colors.yellowAccent,
-    this.imageColor = Colors.red,
+    this.imageColor = Colors.grey,
     this.onBookNow,
     this.onMorePressed,
     required this.avatarUrl,
@@ -34,8 +34,8 @@ class EventCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
-    final sidePadding = screenWidth * 0.08; // 8% of screen width
+    final screenWidth = MediaQuery.of(context).size.height;
+    final cardHight = screenWidth * 0.48;
     return Container(
       margin: const EdgeInsets.only(top: 5, bottom: 5),
       child: ClipRRect(
@@ -112,7 +112,7 @@ class EventCard extends StatelessWidget {
                   children: [
                     Expanded(
                       child: Container(
-                        height: 400,
+                        height: cardHight,
                         color: imageColor,
                         child: Image.asset(
                           eventBanner,
