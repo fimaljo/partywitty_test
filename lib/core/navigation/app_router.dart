@@ -1,7 +1,7 @@
 // lib/core/navigation/app_router.dart
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:partywitty_test/features/home/presentation/pages/main_page.dart';
+import 'package:partywitty_test/features/home/presentation/pages/home_page.dart';
 
 import '../../features/main/presentation/pages/main_page.dart';
 

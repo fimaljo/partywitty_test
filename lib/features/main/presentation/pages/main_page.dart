@@ -38,6 +38,7 @@ class MainPage extends StatelessWidget {
               ],
             ),
           ),
+          child: child,
         ),
         bottomNavigationBar:
             BlocSelector<NavigationBloc, NavigationState, NavigationTab>(
